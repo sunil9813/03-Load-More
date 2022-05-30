@@ -1,3 +1,10 @@
+<!-- api key -->
+
+website name : https://github.com/keikaavousi/fake-store-api
+api => https://fakestoreapi.com/products/
+
+<!-- api key -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

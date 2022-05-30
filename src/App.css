@@ -1,38 +1,63 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #ecf0f1;
+  font-family: Arial, Helvetica, sans-serif;
+}
+section {
+  padding: 50px;
+}
+.title {
   text-align: center;
+  padding: 30px 0;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card {
+  background-color: #fff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+.details {
+  padding: 20px;
+}
+.details h2 {
+  font-size: 17px;
+}
+.flex {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin: 20px 0;
 }
-
-.App-link {
-  color: #61dafb;
+.flex span {
+  background-color: coral;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px;
+  color: #fff;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex h3 {
+  font-size: 20px;
+}
+.viewMore {
+  text-align: center;
+  margin: 40px 0;
+}
+.viewMore button {
+  padding: 15px 80px;
+  font-size: 17px;
+  background-color: chocolate;
+  border: none;
+  color: #fff;
+  cursor: pointer;
 }

@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import React, { useState, useEffect } from "react"
+import Product from "./components/Product"
 
 function App() {
+  const dataUrl = "https://fakestoreapi.com/products"
+
+  const [data, setData] = useState([])
+
+  const dataFetch = async () => {
+    try {
+      const response = await fetch(dataUrl)
+      const data = await response.json()
+      setData(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  useEffect(() => {
+    dataFetch()
+  }, [])
+
+  // Method 2:
+  //const [data, setData] = useState([])
+
+  //const dataFetch = async () => {
+  //  const response = await fetch("https://fakestoreapi.com/products")
+  //  console.log(response)
+  //  const data = await response.json()
+  //  console.log(data)
+  //  setData(data)
+  //}
+  //useEffect(() => {
+  //  dataFetch()
+  //}, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Product data={data} />
+    </>
+  )
 }
 
-export default App;
+export default App
